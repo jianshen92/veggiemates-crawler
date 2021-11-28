@@ -1,0 +1,5 @@
+venv
+nbs
+.ipynb_checkpoints
+__pycache__
+sa.json
