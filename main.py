@@ -7,6 +7,8 @@ import time
 from data_processing import process_data
 from gcloud_utils import upload_blob
 
+import logging
+
 def main():
     headers = {
         'authority': 'api.cnft.io',
@@ -74,7 +76,7 @@ def main():
     with open("meta.json", "w") as f:
         json.dump(meta, f)
 
-    bucket_name="veggiemates-explorer"
+    bucket_name="vegexplore.jaye.es"
 
     # Uploading to GCS
     upload_blob(
