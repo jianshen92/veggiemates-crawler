@@ -50,8 +50,12 @@ def main():
         except Exception as e:
             print(e)
 
-        if len(response_data["results"]) == 0:
-            break
+        try:
+            if len(response_data["results"]) == 0:
+                break
+        except Exception as e:
+            print(e)
+            print(response_data)
 
         for data in response_data["results"]:
             listing = get_price_data(data)
@@ -105,7 +109,10 @@ def main():
 
 if __name__ == "__main__":
     while True:
-        print(f"Start fetching data. Time now:{datetime.utcnow()}")
-        main()
-        print(f"Resting for 60 secs")
-        time.sleep(60)
+        try:
+            print(f"Start fetching data. Time now:{datetime.utcnow()}")
+            main()
+            print(f"Resting for 60 secs")
+            time.sleep(60)
+        except Exception as e:
+            print(e)
