@@ -16,10 +16,10 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
     blob = bucket.blob(destination_blob_name)
 
     blob.metadata = {
-        "Cache-Control" : 'public, max-age=60'
+        "Cache-Control" : 'no-store'
     }
     blob.patch()
-    
+
     blob.upload_from_filename(source_file_name)
 
     print('File {} uploaded to {}.'.format(
