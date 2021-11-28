@@ -36,7 +36,7 @@ def main():
         http_data = (
             '{"nsfw":false,"page":'
             f'{page}'
-            ',"project":"VeggieMates","search":"","sold":false,"sort":{"_id":-1},"verified":true,"types":["offer","listing"]}'
+            ',"project":"VeggieMates","search":"","sold":false,"sort":{"price":1},"verified":true,"types":["offer","listing"]}'
         )
 
         response = requests.post('https://api.cnft.io/market/listings', headers=headers, data=http_data)
