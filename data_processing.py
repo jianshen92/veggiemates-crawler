@@ -21,7 +21,8 @@ def process_data():
 
     sorted_serial = sorted(metadata, key=lambda x: x['serial'])
     filtered_price = [item for item in metadata if item["price_lovelace"] is not None]
-    sorted_price = sorted(filtered_price, key=lambda x: x['price_lovelace'])
+    sort_by_date = sorted(filtered_price, key=lambda x: x['listing_id'], reverse=True)
+    sorted_price = sorted(sort_by_date, key=lambda x: x['price_lovelace'])
     indexed_final = {
         int(item["serial"]): item
         for item in metadata
