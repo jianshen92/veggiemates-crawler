@@ -54,6 +54,7 @@ def main():
         print(f"Getting {page=}")
 
         if response.status_code != 200:
+            print(response.text)
             raise Exception("Http response not 200")
 
         try:
