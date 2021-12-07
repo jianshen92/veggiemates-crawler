@@ -122,7 +122,8 @@ if __name__ == "__main__":
         try:
             print(f"Start fetching data. Time now:{datetime.utcnow()}")
             main()
-            print(f"Resting for 60 secs")
-            time.sleep(60)
         except Exception as e:
             print(e)
+        print(f"Resting for 60 secs")
+        time.sleep(60)
+        
